@@ -1,0 +1,12 @@
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* .container { */
+/*   display: flex; */
+/*   flex-direction: row; */
+/*   align-items: ; */
+/* } */
