@@ -1,22 +1,12 @@
-.divtable {
-  display: grid;
-  grid-template-rows: 28px 1fr;
-  grid-template-columns: 3;
-
-}
-
-.options {
+.list-container{
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 4px;
+  padding: 4px;
 }
-
-.list{
-  display:flex;
-  flex-direction: row;
+.item {
+  display: flex;
   justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
 }

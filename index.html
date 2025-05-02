@@ -9,33 +9,17 @@
 </head>
 
 <body>
-  <div class="container">
-
-    <div class="title">
-      Todolist
+  <h1>Todolist</h1>
+  <hr>
+  <div class="list-container">
+    <div class="item" id="item">
+      <span>
+        <input type="checkbox" name="status" value="false">
+        <input type="text"></input>
+      </span>
+      <button id="delete-item" type="submit" onclick="deleteitem()">delete</button>
     </div>
-    <hr>
-    <div class="divtable">
-
-      <div class="options">
-        <div class="chips">
-          name
-        </div>
-        <div>
-          Date modified
-        </div>
-      </div>
-      <div class="lists" id="lists">
-        <div class="list" id="list">
-          <span>
-            <input type="checkbox" name="done" value="false">
-            Listname
-          </span>
-          <button type="submit">delete</button>
-        </div>
-      </div>
-
-    </div>
+    <button id="add-item" type="submit" onclick="additem()">add</button>
   </div>
 </body>
 <script src="index.js">

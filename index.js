@@ -1,3 +1,5 @@
-console.log("Hello")
-var todolists =document.getElementById("lists")
+var item=document.getElementById("item")
 
+function deleteitem() {
+  
+}
