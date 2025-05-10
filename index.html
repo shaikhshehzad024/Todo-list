@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <h1>Todolist</h1>
-  <hr>
-  <div class="list-container">
-    <div class="item" id="item">
-      <span>
-        <input type="checkbox" name="status" value="false">
-        <input type="text"></input>
-      </span>
-      <button id="delete-item" type="submit" onclick="deleteitem()">delete</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Todolist</h1>
+    <hr>
+    <div class="list-container" id="list_container">
+      <div class="list-template" id="list_template">
+        <div style="display: flex;">
+          <input type="checkbox" id="iscompleted">
+          <input type="text" style="flex: 1;">
+        </div>
+        <button id="delete-item">delete</button>
+      </div>
+      <button id="add-item">add</button>
     </div>
-    <button id="add-item" type="submit" onclick="additem()">add</button>
-  </div>
-</body>
-<script src="index.js">
-
-</script>
-
+    <script src="index.js"></script>
+  </body>
 </html>

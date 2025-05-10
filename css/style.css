@@ -1,12 +1,16 @@
-.list-container{
+.list-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: column;
   border: 1px solid black;
   margin: 4px;
   padding: 4px;
 }
-.item {
+
+.list-template {
   display: flex;
   justify-content: space-between;
+}
+#list_template{
+  display: none;
 }
