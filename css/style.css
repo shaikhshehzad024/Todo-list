@@ -1,16 +1,108 @@
-.list-container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  border: 1px solid black;
-  margin: 4px;
-  padding: 4px;
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Add button */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+/* List container */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Todo entry */
 .list-template {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-#list_template{
-  display: none;
+
+/* Text paragraph inside todo */
+.list-template p {
+  flex-grow: 1;
+  font-size: 18px;
+  cursor: pointer;
+  word-wrap: break-word;
+}
+
+/* Completed tasks styling */
+input[type="checkbox"]:checked+p {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Delete button */
+.list-template button {
+  padding: 6px 12px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.list-template button:hover {
+  background-color: #c9302c;
+}
+
+/* Input field when editing todo */
+.list-template input[type="text"] {
+  padding: 8px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px;
+  max-width: 100%;
+}
+
+.list-template input[type="text"]:focus {
+  outline: none;
+  border-color: #5cb85c;
+}
+
+/* Message when there are no todos */
+.list-container p {
+  font-size: 16px;
+  text-align: center;
+  color: #888;
 }
