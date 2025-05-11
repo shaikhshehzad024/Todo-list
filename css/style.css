@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
@@ -14,14 +13,11 @@ body {
   margin: 0 auto;
 }
 
-/* Heading */
 h1 {
-  text-align: center;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Add button */
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -37,14 +33,12 @@ button:hover {
   background-color: #4cae4c;
 }
 
-/* List container */
 .list-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* Todo entry */
 .list-template {
   background-color: white;
   padding: 15px;
@@ -56,7 +50,6 @@ button:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Text paragraph inside todo */
 .list-template p {
   flex-grow: 1;
   font-size: 18px;
@@ -64,13 +57,11 @@ button:hover {
   word-wrap: break-word;
 }
 
-/* Completed tasks styling */
 input[type="checkbox"]:checked+p {
   text-decoration: line-through;
   color: #888;
 }
 
-/* Delete button */
 .list-template button {
   padding: 6px 12px;
   background-color: #d9534f;
@@ -84,7 +75,6 @@ input[type="checkbox"]:checked+p {
   background-color: #c9302c;
 }
 
-/* Input field when editing todo */
 .list-template input[type="text"] {
   padding: 8px;
   font-size: 18px;
@@ -100,7 +90,6 @@ input[type="checkbox"]:checked+p {
   border-color: #5cb85c;
 }
 
-/* Message when there are no todos */
 .list-container p {
   font-size: 16px;
   text-align: center;

@@ -1,4 +1,3 @@
-// Factory Pattern for creating Todo objects
 function createTodo(task, completed = false) {
   return {
     todoname: task,
@@ -6,7 +5,6 @@ function createTodo(task, completed = false) {
   };
 }
 
-// TodoList Module (Observer Pattern)
 const TodoList = (function() {
   const todos = new Map();
   let onChangeCallback = null;
@@ -54,11 +52,9 @@ const TodoList = (function() {
   };
 })();
 
-// DOM references
 const listContainer = document.getElementById("list_container");
 const addbtn = document.getElementById("add-item");
 
-// Event listener for Add Todo button
 addbtn.addEventListener('click', function() {
   // Check if there's already an input box to avoid multiple inputs
   const existingInput = document.getElementById('new-task-input');
@@ -76,7 +72,6 @@ addbtn.addEventListener('click', function() {
   const addTaskBtn = document.createElement('button');
   addTaskBtn.textContent = 'Save Todo';
 
-  // Place input above the list
   listContainer.prepend(addTaskBtn);
   listContainer.prepend(input);
 
@@ -92,7 +87,6 @@ addbtn.addEventListener('click', function() {
     }
 
     TodoList.add(task); // add to map
-    // Cleanup input and button
     input.remove();
     addTaskBtn.remove();
   }
@@ -102,12 +96,10 @@ addbtn.addEventListener('click', function() {
     if (e.key === 'Enter') saveTask();
   });
 });
-// Observer for rendering the Todo list
 TodoList.onChange(displayTodos);
 
-// Display all todos
 function displayTodos() {
-  listContainer.innerHTML = ''; // Clear existing todos
+  listContainer.innerHTML = '';
   const todos = TodoList.getAll();
 
   if (todos.length === 0) {
@@ -118,16 +110,14 @@ function displayTodos() {
   }
 
   todos.forEach(([key, value]) => {
-    createEntry(value, key); // Create each todo entry dynamically
+    createEntry(value, key);
   });
 }
 
-// Create individual todo entry
 function createEntry(value, key) {
   const todoEntry = document.createElement('div');
   todoEntry.className = 'list-template';
 
-  // Editable Text
   const todoText = document.createElement('p');
   todoText.textContent = value.todoname.trim() !== '' ? value.todoname : '(Click to edit)';
   todoText.style.display = 'inline';
@@ -159,7 +149,6 @@ function createEntry(value, key) {
     input.focus();
   });
 
-  // Checkbox
   const completedCheckbox = document.createElement('input');
   completedCheckbox.type = 'checkbox';
   completedCheckbox.checked = value.iscompleted;
@@ -167,19 +156,16 @@ function createEntry(value, key) {
     TodoList.toggleComplete(key, completedCheckbox.checked);
   });
 
-  // Delete button
   const deleteItem = document.createElement('button');
   deleteItem.textContent = 'Delete';
   deleteItem.addEventListener('click', function() {
     TodoList.remove(key);
   });
 
-  // Append
   todoEntry.appendChild(completedCheckbox);
   todoEntry.appendChild(todoText);
   todoEntry.appendChild(deleteItem);
 
-  listContainer.appendChild(todoEntry);
+  listContainer.prepend(todoEntry);
 }
-// Initialize the display
 displayTodos();
